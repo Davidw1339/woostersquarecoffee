@@ -59,10 +59,14 @@ a {
     position: relative;
     height: 75%;
 
-    background:rgba(0, 0, 0, 0.5);
+    /*background:rgba(0, 0, 0, 0.5);*/
 
     font-family: 'Lato', sans-serif;
     color: white;
+}
+
+.dark-back {
+    background:rgba(0, 0, 0, 0.5);
 }
 
 #title_banner {
