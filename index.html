@@ -1,79 +1,352 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Wooster Square Coffee</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="js/parallax.js-1.5.0/parallax.js"></script>
-    </head>
 
-    <body>
+<head>
+    <title>Wooster Square Coffee</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" /> -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" /> -->
+</head>
 
-        <div class="dark-back parallax-window full_height" data-parallax="scroll" data-image-src="assets/coffee_pic2.jpg">
-            <div id="title_banner">WOOSTER SQUARE COFFEE</div>
-            <div id="scroll_down_text">Scroll</div>
-            <div id="scroll_down"></div>
-        </div>
-        <!-- <div class="parallax"></div> -->
+<body>
+    <!-- darken-pseudo darkens the image and text, lighten-text overrides the darkening of text to not darken it -->
+    <div class="full_height darken-pseudo lighten-text rellax" id="full_banner">
+        <div id="title_banner">WOOSTER SQUARE COFFEE</div>
+        <div id="scroll_down_text">Scroll</div>
+        <!-- The scroll down arrow -->
+        <div class="arrow down_arrow white_arrow" id="scroll_down"></div>
+    </div>
 
-
-        <div class="text_container">
-            <div id="menu" class="lato section_title text_center">MENU</div>
-            <p class="text_content text_center">
-                <embed width="740" height="900" src="assets/coffeemenu.pdf" style="margin-bottom: 40px">
-                <!-- <img class="simple_center" width="600px" src=""></img> -->
-                <!-- <p class="text_center" style="font-size: 24px;">COMING SOON</p> -->
-            </p>
-        </div>
-
-        <div class="dark-back parallax-window" data-parallax="scroll" data-image-src="assets/coffee_pic1.jpg"></div>
-
-        <div class="text_container">
-            <div id="hours" class="lato section_title text_center" style="margin-bottom: 20px;">HOURS</div>
-            <div class="row">
-                <div class="column_left hours text_right">
-                    MONDAY - FRIDAY
+    <div class="text_container">
+        <!-- MENU title -->
+        <div id="menu" class="lato section_title text_center">MENU</div>
+        <!-- Container to hold the carousel and the back and forth arrows for them -->
+        <div class="container">
+            <!-- back arrow for carousel -->
+            <i class="arrow left_arrow carousel_arrow_left prev"></i>
+            <!-- <div class="whiteout_arrow_left carousel_arrow_left"></div> -->
+            <!-- Actual carousel with divs as the individual menu categories -->
+            <div class="carousel siema">
+                <div class="carousel_item hot_coffee">
+                    <div class="text_center item_header">
+                        <strong>Hot Coffee</strong>
+                    </div>
+                    <hr>
+                    <table class="full_width">
+                        <tr>
+                            <th></th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                        </tr>
+                        <tr>
+                            <td class="item_name">
+                                <strong>Coffee</strong>
+                            </td>
+                            <td class="text_center">1.88</td>
+                            <td class="text_center">2.39</td>
+                            <td class="text_center">2.89</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Cafe Au Lait</strong>
+                            </td>
+                            <td class="text_center">2.15</td>
+                            <td class="text_center">2.65</td>
+                            <td class="text_center">3.15</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Caffe Latte</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center">3.75</td>
+                            <td class="text_center">4.75</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Americano</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center">3.25</td>
+                            <td class="text_center">4.25</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Pour Over</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center">5.00</td>
+                            <td class="text_center"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Cappuccino</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center">3.50</td>
+                            <td class="text_center">4.50</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Espresso</strong>
+                            </td>
+                            <!-- Espresso and Macchiato are handled differently, span all columns and jank spacing -->
+                            <td class="text_center" colspan="3">
+                                <span style="font-size: 75%">single</span> 2.50 &nbsp; &nbsp; &nbsp; &nbsp;
+                                <span style="font-size: 75%">double</span> 3.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Macchiato</strong>
+                            </td>
+                            <td class="text_center" colspan="3">
+                                <span style="font-size: 75%">single</span> 2.75 &nbsp; &nbsp; &nbsp; &nbsp;
+                                <span style="font-size: 75%">double</span> 3.25
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="column_right hours text_left">
-                    7:00 AM - 6:00 PM
+
+                <div class="carousel_item ice_coffee">
+                    <div class="text_center item_header">
+                        <strong>Ice Coffee</strong>
+                    </div>
+                    <hr>
+                    <table class="full_width">
+                        <tr>
+                            <th></th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                        </tr>
+                        <tr>
+                            <td class="item_name">
+                                <strong>Iced Coffee</strong>
+                            </td>
+                            <td class="text_center">2.99</td>
+                            <td class="text_center">3.49</td>
+                            <td class="text_center">3.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Iced Latte</strong>
+                            </td>
+                            <td class="text_center">3.75</td>
+                            <td class="text_center">4.75</td>
+                            <td class="text_center">5.75</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Cold Brew</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center">4.00</td>
+                            <td class="text_center"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Iced Americano</strong>
+                            </td>
+                            <td class="text_center">3.50</td>
+                            <td class="text_center">4.50</td>
+                            <td class="text_center">5.50</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="carousel_item tea">
+                    <div class="text_center item_header">
+                        <strong>Teas</strong>
+                    </div>
+                    <hr>
+                    <table class="full_width">
+                        <tr>
+                            <th></th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                        </tr>
+                        <tr>
+                            <td class="item_name">
+                                <strong>Tea</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center"></td>
+                            <td class="text_center">2.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Chai Latte</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center">3.75</td>
+                            <td class="text_center">4.75</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Matcha Latte</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center">3.75</td>
+                            <td class="text_center">4.75</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Lemon Ginger Tea</strong>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center">3.25</td>
+                            <td class="text_center">3.75</td>
+                        </tr>
+                        <tr>
+                            <td class="item_name">
+                                <strong>Iced Tea</strong>
+                            </td>
+                            <td class="text_center">2.99</td>
+                            <td class="text_center">3.49</td>
+                            <td class="text_center">3.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Iced Chai Latte</strong>
+                            </td>
+                            <td class="text_center">3.75</td>
+                            <td class="text_center">4.75</td>
+                            <td class="text_center">5.75</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Iced Matcha Latte</strong>
+                            </td>
+                            <td class="text_center">3.75</td>
+                            <td class="text_center">4.75</td>
+                            <td class="text_center">5.75</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Iced Lemon Ginger Tea</strong>
+                            </td>
+                            <td class="text_center">3.50</td>
+                            <td class="text_center">4.50</td>
+                            <td class="text_center">5.50</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <div class="row">
-                <div class="column_left hours text_right">
-                    SATURDAY
-                </div>
-                <div class="column_right hours text_left">
-                    8:00 AM - 6:00 PM
-                </div>
-            </div>
-            <div class="row">
-                <div class="column_left hours text_right">
-                    SUNDAY
-                </div>
-                <div class="column_right hours text_left">
-                    9:00 AM - 5:00 PM
-                </div>
-            </div>
-
-
-            <div id="location" class="lato section_title text_center" style="margin-top: 60px; margin-bottom: 20px;">LOCATION</div>
+            <!-- forward arrow for carousel -->
+            <i class="arrow right_arrow carousel_arrow_right next"></i>
         </div>
+    </div>
 
-        <div class="text_center">
-            <iframe width="100%" height="450" frameborder="0" style="border:0; /*margin-bottom: 20px;*/" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJISVzXTPY54kRCPS6X_S_IVw&key=AIzaSyDGqXHoBPsFmv11vOmX2GRfhvGdEXrmJUk" allowfullscreen></iframe>
-        </div>
+    <div class="darken-pseudo" id="semi_banner"></div>
 
-        <!-- TOP NAV BAR -->
-        <div class="top_nav">
-            <div class="nav_icon">Wooster Square Coffee</div>
-            <div class="nav_items">
+    <div class="text_container">
+        <div id="location" class="lato section_title text_center" style="margin-bottom: 20px;">LOCATION</div>
+    </div>
+
+    <div class="text_center">
+        <iframe width="100%" height="450" frameborder="0" style="border:0; /*margin-bottom: 20px;*/" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJISVzXTPY54kRCPS6X_S_IVw&key=AIzaSyDGqXHoBPsFmv11vOmX2GRfhvGdEXrmJUk"
+            allowfullscreen></iframe>
+    </div>
+
+    <div class="footer_black">
+        <div id="hours" class="lato section_title text_center" style="margin-bottom: 60px;">CONTACT US</div>
+        <table class="contact_table">
+            <tr>
+                <td class="width_half">
+                    <div class="contact_info">
+                        <div class="row">
+                            <div class="column_left text_right">
+                                E-MAIL
+                            </div>
+                            <div class="column_right text_left">
+                                info@woostersquarecoffee.com
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column_left text_right">
+                                PHONE
+                            </div>
+                            <div class="column_right text_left">
+                                (475) 227-0687
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column_left text_right">
+                                ADDRESS
+                            </div>
+                            <div class="column_right text_left">
+                                516 Chapel St, New Haven
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td class="width_half">
+                    <div class="hours">
+                        <div class="row">
+                            <div class="column_left text_right">
+                                MONDAY - FRIDAY
+                            </div>
+                            <div class="column_right text_left">
+                                7:00 AM - 6:00 PM
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column_left text_right">
+                                SATURDAY
+                            </div>
+                            <div class="column_right text_left">
+                                8:00 AM - 6:00 PM
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column_left text_right">
+                                SUNDAY
+                            </div>
+                            <div class="column_right text_left">
+                                9:00 AM - 5:00 PM
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- TOP NAV BAR -->
+    <div class="top_nav">
+        <div class="nav_icon">Wooster Square Coffee</div>
+        <!-- <div class="nav_items">
                 <span class="nav_item"><a href="#menu">MENU</a></span>
                 <span class="nav_item"><a href="#hours">HOURS</a></span>
                 <span class="nav_item"><a href="#location">LOCATION</a></span>
-            </div>
-        </div>
+            </div> -->
+    </div>
 
-    </body>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.carousel').slick();
+            });
+        </script> -->
+
+    <script src="js/siema.min.js"></script>
+    <script>
+        const mySiema = new Siema({
+            loop: true,
+        });
+        document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
+        document.querySelector('.next').addEventListener('click', () => mySiema.next());
+        new Siema();
+    </script>
+
+</body>
 
 </html>

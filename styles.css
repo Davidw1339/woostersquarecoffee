@@ -35,6 +35,7 @@ a {
     color: white;
     padding: 20px 0 20px 0px;
     background-color: black;
+    z-index: 2;
 }
 
 .nav_icon {
@@ -55,20 +56,45 @@ a {
     height: 100% !important;
 }
 
-.parallax-window {
+.full_width {
+    width: 100%;
+}
+
+/* The following rules are to handle darkening the background image, pretty jank 
+   https://codepen.io/wpaesthetic/pen/adYJjX */
+.darken-pseudo {
     position: relative;
-    height: 75%;
-
-    /*background:rgba(0, 0, 0, 0.5);*/
-
-    font-family: 'Lato', sans-serif;
-    color: white;
+}
+  
+.darken-pseudo:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.dark-back {
-    background:rgba(0, 0, 0, 0.5);
+/* We must bring the text up one z-index to prevent it from being subject to the darkening */
+.lighten-text div {
+    position: relative;
+    z-index: 1;
 }
 
+#full_banner {
+    background: url('assets/coffeeshop_interior_highres_rot.jpg') no-repeat center;
+    background-size: cover;
+}
+
+#semi_banner {
+    height: 60%;
+    background: url('assets/coffee_pic1.jpg') no-repeat center;
+    background-size: cover; 
+}
+
+/* Handle the styling of Wooster Square Coffee big text */
 #title_banner {
     position: absolute;
     top: 40%;
@@ -78,8 +104,10 @@ a {
     font-size: 48px;
     letter-spacing: 2px;
     text-align: center;
+    color: white;
 }
 
+/* Handle the styling of the text that says scroll */
 #scroll_down_text {
     position: absolute;
     bottom: 50px;
@@ -93,6 +121,7 @@ a {
     color: white;
 }
 
+/* Get that cute little triangle to appear u w u */
 #scroll_down {
     position: absolute;
     bottom: 30px;
@@ -102,9 +131,9 @@ a {
 
     width: 0;
     height: 0;
-    border-left: 20px solid transparent;
+    /* border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 15px solid #FFF;
+    border-top: 15px solid #FFF; */
 
 }
 
@@ -115,16 +144,53 @@ a {
     width: 800px;
 }
 
+.container {
+    position: relative;
+}
+
 .section_title {
     margin-top: 20px;
     font-size: 36px;
     letter-spacing: 4px;
-
-    width: 800px;
 }
 
 .text_content {
     margin: 30px;
+}
+
+.carousel {
+    margin: 20px;
+    /* padding: 20px; */
+    font-size: 24px;
+    background-color: #2f3334;
+    color: white;
+}
+
+.carousel_item {
+    padding: 20px;
+    background-color: #2f3334;
+}
+
+.item_header {
+    font-size: 30px;
+}
+
+.item_name {
+    width: 60%;
+}
+
+.footer_black {
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.contact_table {
+    width: 100%;
+}
+
+.width_half {
+    width: 50%;
 }
 
 .column_left {
@@ -148,6 +214,81 @@ a {
     clear: both;
 }
 
-.hours {
-    font-size: 24px;
+.hours, .contact_info {
+    font-size: 18px;
+}
+
+.arrow {
+    border: solid #2f3334;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 6px;
+    width: 0;
+    height: 0;
+}
+.white_arrow {
+    border: solid white;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 6px;
+    width: 0;
+    height: 0;
+}
+
+.left_arrow {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.right_arrow {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.down_arrow {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.carousel_arrow_left {
+    position: absolute;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+}
+
+.carousel_arrow_right {
+    position: absolute;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* Set the colors for each carousel item */
+.hot_coffee hr {
+    background-color: #dfba8d;
+    color: #dfba8d;
+    border-color: #dfba8d;
+}
+.hot_coffee .item_header {
+    color: #dfba8d;
+}
+.ice_coffee hr {
+    background-color: #fff4e6;
+    color: #fff4e6;
+    border-color: #fff4e6;
+}
+.ice_coffee .item_header {
+    color: #fff4e6;
+}
+.tea hr {
+    background-color: #58ac86;
+    color: #58ac86;
+    border-color: #58ac86;
+}
+.tea .item_header {
+    color: #58ac86;
 }
